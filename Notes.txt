@@ -1,0 +1,23 @@
+# new solution
+dotnet new sln -n FitnessApp 
+
+# new api project
+dotnet new webapi -n Api
+
+# new class library
+dotnet new classlib -n Core
+
+# new test project
+dotnet new xunit -n Api.Tests.Unit
+
+# add reference to sln
+dotnet sln add src/Api
+
+# add reference to project
+dotnet add reference ../Core
+
+# Add a migration
+dotnet ef migrations add InitialCreate --project ../Data/ -o Migrations
+
+# update entity framework tool
+dotnet tool update --global dotnet-ef 
